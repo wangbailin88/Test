@@ -48,6 +48,7 @@ public class CompareNumberTest {
         assertThat(result).isEqualTo("0A0B");
         System.out.print(result);
     }
+
     //测试是否返回2A1B
     @Test
     public void test_result_2A1B(){
