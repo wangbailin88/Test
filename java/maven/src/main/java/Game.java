@@ -17,15 +17,24 @@ public class Game {
         this.answerGenerator = answerGenerator;
     }
      public void game() throws IOException {
+         int chance = 6;
          out.println("welcome");
-         out.println("please input your answer(6)");
-         String input = answerGenerator.randAnswer();
-         String answer = bufferedReader.readLine();
-         String result = compareNumber.rand(input,answer);
-         if(!"4A0B".equals(result)){
-             out.println(result);
-             out.println("please input your answer(5)");
+         while(chance >=1){
+             out.println("please input your answer("+chance+")");
+             String input = answerGenerator.randAnswer();
+             String answer = bufferedReader.readLine();
+             String result = compareNumber.rand(input,answer);
+             if("4A0B".equals(result)){
+                 out.println("congratulation");
+                 return;
+             }
+                 out.println(result);
+
+                 chance--;
+
          }
+         out.println("game over");
+
 
      }
 }
